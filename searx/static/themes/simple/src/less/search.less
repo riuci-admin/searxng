@@ -23,6 +23,10 @@
     "spacer categories";
 }
 
+#safesearch {
+  display: none;
+}
+
 .category {
   display: inline-block;
   position: relative;
@@ -62,12 +66,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  align-self: center;
 
   svg {
     flex: 1;
     width: 30px;
     height: 30px;
-    margin: 0.5rem 0 auto 0;
+  }
+}
+
+@media screen and (max-width: @phone) {
+  #search_logo {
+    svg {
+      padding-left: 7px;
+    }
   }
 }
 
@@ -91,6 +103,12 @@
 
 #search_view {
   grid-area: search;
+}
+
+@media screen and (max-width: @phone) {
+  #search_view {
+    padding: 7px;
+  }
 }
 
 .search_box {
@@ -288,6 +306,7 @@ html.no-js #clear_search.hide_if_nojs {
     top: 0;
     height: 100%;
     width: 100%;
+    padding: 0;
     z-index: 10000;
 
     .search_box {
